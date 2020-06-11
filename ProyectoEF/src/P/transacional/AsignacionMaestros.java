@@ -169,8 +169,8 @@ public class AsignacionMaestros extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
             try {
-                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
-                PreparedStatement pst = cn.prepareStatement("select * from maestros where codigo_maestro = ?");
+                Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/siu", "root", "");
+                PreparedStatement pst = cn.prepareStatement("select * from asignacioncursosmastros where codigo_maestro = ?");
                 pst.setString(1, txtBuscar.getText().trim());
                 ResultSet rs = pst.executeQuery();
 

@@ -300,8 +300,8 @@ FondoPanel fondo = new FondoPanel();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/registrof1", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into clientes2 values(?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "");//conecta a MYSQL
+            PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosalumnos values(?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtsede.getText().trim());
