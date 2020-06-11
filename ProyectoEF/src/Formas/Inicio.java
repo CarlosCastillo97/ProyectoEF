@@ -17,8 +17,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 
 /*FORMULARIO INICIO 
-    POR: CARLOS CASTILLO
-    FECHA: 25 DE MAYO DE 2020*/
+    POR: CARLOS CASTILLO*/
 public class Inicio extends javax.swing.JFrame {
 
     public static registro frmReg;
@@ -46,7 +45,7 @@ public class Inicio extends javax.swing.JFrame {
         btnLogin.setBackground(new java.awt.Color(51, 51, 51));
         btnLogin.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(51, 51, 51));
-        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/user-login-305 (2).png"))); // NOI18N
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user-login-305 (2).png"))); // NOI18N
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
@@ -56,7 +55,7 @@ public class Inicio extends javax.swing.JFrame {
         btnRegistro.setBackground(new java.awt.Color(51, 51, 51));
         btnRegistro.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         btnRegistro.setForeground(new java.awt.Color(51, 51, 51));
-        btnRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/add-user-302 (2).png"))); // NOI18N
+        btnRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/add-user-302 (2).png"))); // NOI18N
         btnRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistroActionPerformed(evt);
@@ -68,20 +67,20 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(34, 34, 34)
                 .addComponent(btnRegistro)
-                .addGap(52, 52, 52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addGap(44, 44, 44))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnRegistro)
-                    .addComponent(btnLogin))
-                .addGap(72, 72, 72))
+                    .addComponent(btnLogin)
+                    .addComponent(btnRegistro))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -125,7 +124,6 @@ public class Inicio extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        UIManager.setLookAndFeel(new NoireLookAndFeel());
         //</editor-fold>
         //</editor-fold>
 

@@ -5,32 +5,22 @@
  */
 package Formas;
 
-import java.awt.Dimension;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import modelo.Usuarios;
+
 /**
  *
- * @author diego
+ * @author SOPORTE
  */
-
-    /*FORMULARIO PRINCIPAL
-    POR: DIEGO VÁSQUEZ
-    FECHA: 22 DE MARZO DE 2020*/
 public class Principal extends javax.swing.JFrame {
-
-    Usuarios mod;
+Usuarios mod;
+private Asignacion_cursosAl winMnuProcesosAsignacionAlumnos;
     /**
      * Creates new form Frm_Principal
      */
-    public Principal() {
+ public Principal() {
         initComponents();
     }
+
     Principal(Usuarios mod) {
         initComponents();
         setLocationRelativeTo(null);
@@ -39,24 +29,31 @@ public class Principal extends javax.swing.JFrame {
         if (mod.getId_Tipo() == 1) {
             jMenu1.setVisible(true);
             jMenu2.setVisible(true);
-            Salir_Sistema.setVisible(true);
+            
         } else if (mod.getId_Tipo() == 2) {
                 jMenu1.setVisible(true);
                 jMenu2.setVisible(false);
-                Salir_Sistema.setVisible(true);
+                
         }
                 else if (mod.getId_Tipo() == 3){
                     jMenu1.setVisible(false);
                     jMenu2.setVisible(true);
-                    Salir_Sistema.setVisible(true);
+                    
         }
                      else{
                         jMenu1.setVisible(false);
                         jMenu2.setVisible(false);
-                        Salir_Sistema.setVisible(true);
+                        
                   
               }
     }
+    /**
+     * Creates new form FormularioMDI
+     */
+    private MantenimientoAlumnos nuevaVentana2;
+    
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,50 +63,35 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu3 = new javax.swing.JMenu();
-        Workbench = new javax.swing.JDesktopPane();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu5 = new javax.swing.JMenu();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        FrmMantDepto_Call = new javax.swing.JMenuItem();
-        FrmMantCargos_Call = new javax.swing.JMenuItem();
-        FrmMantEmp_Call = new javax.swing.JMenuItem();
-        FrmMantConcepto_Call = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        Salir_Sistema = new javax.swing.JMenuItem();
-
-        jMenu3.setText("jMenu3");
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Sistema de Nóminas");
-        setResizable(false);
 
-        Workbench.setBackground(new java.awt.Color(51, 51, 51));
-
-        javax.swing.GroupLayout WorkbenchLayout = new javax.swing.GroupLayout(Workbench);
-        Workbench.setLayout(WorkbenchLayout);
-        WorkbenchLayout.setHorizontalGroup(
-            WorkbenchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1100, Short.MAX_VALUE)
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1007, Short.MAX_VALUE)
         );
-        WorkbenchLayout.setVerticalGroup(
-            WorkbenchLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 579, Short.MAX_VALUE)
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 716, Short.MAX_VALUE)
         );
 
-        jMenuBar2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jMenu1.setText("Catalogos");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
-        jMenu5.setText("Operaciones");
-        jMenu5.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/calculator_1616.png"))); // NOI18N
-        jMenu1.setText("Cálcular Nóminas");
-        jMenu1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-
-        jMenuItem1.setText("Cálcular Nóminas");
+        jMenuItem1.setText("Mantenimiento Alumnos");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -117,159 +99,111 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Imprimir Nóminas");
+        jMenuItem2.setText("Mantenimiento Maestors");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
-        jMenu5.add(jMenu1);
+        jMenuBar1.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/database_up1616.png"))); // NOI18N
-        jMenu2.setText("Mantenimientos");
-        jMenu2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jMenu2.setText("Salir");
 
-        FrmMantDepto_Call.setText("Departamentos");
-        FrmMantDepto_Call.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem3.setText("Salir del sistema");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FrmMantDepto_CallActionPerformed(evt);
+                jMenuItem3ActionPerformed(evt);
             }
         });
-        jMenu2.add(FrmMantDepto_Call);
+        jMenu2.add(jMenuItem3);
 
-        FrmMantCargos_Call.setText("Cargos");
-        FrmMantCargos_Call.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FrmMantCargos_CallActionPerformed(evt);
-            }
-        });
-        jMenu2.add(FrmMantCargos_Call);
+        jMenuBar1.add(jMenu2);
 
-        FrmMantEmp_Call.setText("Empleados");
-        FrmMantEmp_Call.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FrmMantEmp_CallActionPerformed(evt);
-            }
-        });
-        jMenu2.add(FrmMantEmp_Call);
-
-        FrmMantConcepto_Call.setText("Conceptos de Nómina");
-        FrmMantConcepto_Call.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FrmMantConcepto_CallActionPerformed(evt);
-            }
-        });
-        jMenu2.add(FrmMantConcepto_Call);
-
-        jMenu5.add(jMenu2);
-        jMenu5.add(jSeparator1);
-
-        Salir_Sistema.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        Salir_Sistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/window_remove1616.png"))); // NOI18N
-        Salir_Sistema.setText("Salir del Sistema");
-        Salir_Sistema.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Salir_SistemaActionPerformed(evt);
-            }
-        });
-        jMenu5.add(Salir_Sistema);
-
-        jMenuBar2.add(jMenu5);
-
-        setJMenuBar(jMenuBar2);
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Workbench)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDesktopPane1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Workbench)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jDesktopPane1)
+                .addContainerGap())
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FrmMantCargos_CallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrmMantCargos_CallActionPerformed
-        Llamar_Formas("Cargos");
-    }//GEN-LAST:event_FrmMantCargos_CallActionPerformed
-    private void Llamar_Formas(String forma){
-        JInternalFrame frm;
-        Dimension workbenchSize = Workbench.getSize();
-        
-        switch(forma){
-            case "Cargos":
-                frm = new Asignacion_cursos();
-                Dimension frameSize1 = frm.getSize();
-                frm.setLocation((workbenchSize.width - frameSize1.width)/2, (workbenchSize.height - frameSize1.height)/2);
-                Workbench.add(frm);
-                frm.setVisible(true);
-                break;
-        }
-        
-    }
-    private void Salir_SistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salir_SistemaActionPerformed
-       this.dispose();
-       Inicio fInicio = new Inicio();
-       fInicio.setVisible(true);
-    }//GEN-LAST:event_Salir_SistemaActionPerformed
-
-    private void FrmMantDepto_CallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrmMantDepto_CallActionPerformed
-        Llamar_Formas("Deptos");
-    }//GEN-LAST:event_FrmMantDepto_CallActionPerformed
-
-    private void FrmMantConcepto_CallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrmMantConcepto_CallActionPerformed
-        Llamar_Formas("Conceptos");
-    }//GEN-LAST:event_FrmMantConcepto_CallActionPerformed
-
-    private void FrmMantEmp_CallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrmMantEmp_CallActionPerformed
-        Llamar_Formas("Empleado");
-    }//GEN-LAST:event_FrmMantEmp_CallActionPerformed
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-       int r = JOptionPane.showConfirmDialog(null, "¿DESEA GENERAR UNA NUEVA NÓMINA?","", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-       if(r==0){
-           Llamar_Formas("GenNom");
-       }
-       else{
-           FrmCalcNom frmCN;
-           try {
-               frmCN = new FrmCalcNom();
-               FrmCalcNom.TxtCodNom.setEditable(true);
-               frmCN.setVisible(true);
-               Workbench.add(frmCN);
-           } catch (SQLException ex) {
-               Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-           }
-       }
+        // TODO add your handling code here:
+        nuevaVentana2 = new MantenimientoAlumnos();
+        jDesktopPane1.add (nuevaVentana2);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+             winMnuProcesosAsignacionAlumnos = new Asignacion_cursosAl();
+             jDesktopPane1.add(winMnuProcesosAsignacionAlumnos);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
-     * @throws javax.swing.UnsupportedLookAndFeelException
      */
-    public static void main(String args[]) throws UnsupportedLookAndFeelException {
-        UIManager.setLookAndFeel(new NoireLookAndFeel());
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> {
-            new Principal().setVisible(true);
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Principal().setVisible(true);
+            }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem FrmMantCargos_Call;
-    private javax.swing.JMenuItem FrmMantConcepto_Call;
-    private javax.swing.JMenuItem FrmMantDepto_Call;
-    private javax.swing.JMenuItem FrmMantEmp_Call;
-    private javax.swing.JMenuItem Salir_Sistema;
-    public static javax.swing.JDesktopPane Workbench;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
