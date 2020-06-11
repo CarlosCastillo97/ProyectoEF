@@ -144,12 +144,12 @@ CREATE TABLE asignacioncursosmastros
   FOREIGN KEY (codigo_maestro) REFERENCES maestros(codigo_maestro)
   ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE IF NOT EXISTS `usuarios` (
-  `id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `usuario` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `nombre` varchar(80) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `last_session` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `Id_Tipo` int(11) DEFAULT NULL
+CREATE TABLE usuarios (
+  id int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  usuario varchar(45) NOT NULL,
+  password varchar(45) NOT NULL,
+  nombre varchar(80) NOT NULL,
+  email varchar(45) NOT NULL,
+  last_session datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  Id_Tipo int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
