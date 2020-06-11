@@ -14,8 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Jacky
- */
+@author Carlos Castillo */
 public class AsignacionEstudiantes1 extends javax.swing.JInternalFrame {
 FondoPanel fondo = new FondoPanel();
     /**
@@ -64,9 +63,8 @@ FondoPanel fondo = new FondoPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
 
-        jButton2.setBackground(new java.awt.Color(255, 204, 204));
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("Asignar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -80,11 +78,11 @@ FondoPanel fondo = new FondoPanel();
         jLabel12.setForeground(new java.awt.Color(51, 0, 0));
         jLabel12.setText("Informacion Estudiante:");
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel8.setText("Carnet Alumno:");
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 102));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Buscar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +114,7 @@ FondoPanel fondo = new FondoPanel();
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setText("Codigo Carrera");
 
@@ -200,7 +198,7 @@ FondoPanel fondo = new FondoPanel();
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel1.setText("Asignacion de cursos Alumnos");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 102));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel9.setText("Nombre:");
 
@@ -243,8 +241,6 @@ FondoPanel fondo = new FondoPanel();
                 .addContainerGap())
         );
 
-        jLabel13.setText("Cambio version2");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -272,8 +268,6 @@ FondoPanel fondo = new FondoPanel();
                                 .addComponent(jButton2)
                                 .addGap(141, 141, 141))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(39, 39, 39))))))
         );
@@ -289,9 +283,7 @@ FondoPanel fondo = new FondoPanel();
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13))
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(75, 75, 75)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
@@ -299,7 +291,7 @@ FondoPanel fondo = new FondoPanel();
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -308,8 +300,8 @@ FondoPanel fondo = new FondoPanel();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/registrof1", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into clientes2 values(?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "");//conecta a MYSQL
+            PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosalumnos values(?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
 
             pst.setString(1, txtcodigo.getText().trim());
             pst.setString(2, txtsede.getText().trim());
@@ -363,7 +355,6 @@ FondoPanel fondo = new FondoPanel();
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -392,7 +383,7 @@ class FondoPanel extends JPanel
     private Image imagen;
     @Override
     public void paint(Graphics g){
-        imagen = new ImageIcon(getClass().getResource("/CONTENEDORMDI/fondonaranja.jpg")).getImage();
+        imagen = new ImageIcon(getClass().getResource("/Formas/fondonaranja.jpg")).getImage();
         g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
         setOpaque(false);
         super.paint(g);
