@@ -13,8 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author lsosa
- */
+@author Carlos Castillo */
 public class AsignacionMaestros extends javax.swing.JInternalFrame {
 
     /**
