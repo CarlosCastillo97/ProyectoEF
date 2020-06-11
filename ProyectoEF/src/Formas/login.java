@@ -6,6 +6,8 @@
 /*Autor: CastilloC*/
 package Formas;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,6 +16,8 @@ import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
 import modelo.SqlUsuarios;
 import modelo.Usuarios;
+import javax.swing.JDesktopPane;
+import Formas.MDI;
 
 /**
  *
@@ -158,6 +162,11 @@ public class login extends javax.swing.JFrame {
                 this.dispose();
                 
                 MDI frmMenu = new MDI(mod);
+                this.setExtendedState(MDI.MAXIMIZED_BOTH);
+                Toolkit tk = Toolkit.getDefaultToolkit();
+                Dimension d = tk.getScreenSize();
+                int ancho = (int)d.getWidth() / 2;
+                int alto = (int)d.getHeight() / 2;
                 frmMenu.setVisible(true);
                 
             } else {

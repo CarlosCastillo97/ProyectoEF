@@ -247,7 +247,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Proyecto", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/siu", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from alumnos where carnet_alumno = ?");
             pst.setString(1, txtbuscar.getText().trim());
             ResultSet rs = pst.executeQuery();
@@ -269,7 +269,7 @@ FondoPanel fondo = new FondoPanel();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
          try{
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/Proyecto", "root", "");//conecta a MYSQL
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "");//conecta a MYSQL
             PreparedStatement pst = cn.prepareStatement("insert into asignacioncursosalumnos values(?,?,?,?,?,?,?)");//Inserta los datos en la tabla clientes2
            
             pst.setString(1, txtcodigo.getText().trim());

@@ -190,7 +190,7 @@ FondoPanel fondo = new FondoPanel();
         
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "");//conecta a MYSQL
-            PreparedStatement pst = cn.prepareStatement("insert into carreras1 values(?,?,?,?)");//Inserta los datos en la tabla
+            PreparedStatement pst = cn.prepareStatement("insert into carreras values(?,?,?,?)");//Inserta los datos en la tabla
            
             pst.setString(1, txtcodigo.getText().trim());//Codigo
             pst.setString(2, txtcarrera.getText().trim());//Nombre
@@ -214,7 +214,7 @@ FondoPanel fondo = new FondoPanel();
         // TODO add your handling code here:
         try {
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/siu", "root", "");
-            PreparedStatement pst = cn.prepareStatement("delete from carreras1 where codigo_carrera = ?");
+            PreparedStatement pst = cn.prepareStatement("delete from carreras where codigo_carrera = ?");
 
             pst.setString(1, Buscar.getText().trim());
             pst.executeUpdate();
@@ -233,7 +233,7 @@ FondoPanel fondo = new FondoPanel();
         // TODO add your handling code here:
         try{
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "");
-            PreparedStatement pst = cn.prepareStatement("select * from carreras1 where codigo_carrera = ?");
+            PreparedStatement pst = cn.prepareStatement("select * from carreras where codigo_carrera = ?");
             pst.setString(1, Buscar.getText().trim());
             ResultSet rs = pst.executeQuery();
 
@@ -258,7 +258,7 @@ FondoPanel fondo = new FondoPanel();
             String Codigo = Buscar.getText().trim();
 
             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/siu", "root", "");
-            PreparedStatement pst = cn.prepareStatement("update carreras1 set codigo_carrera= ?,nombre_carrera = ?,codigo_facultad = ?,estatus_carrera=? where codigo_carrera = "+ Codigo);
+            PreparedStatement pst = cn.prepareStatement("update carreras set codigo_carrera= ?,nombre_carrera = ?,codigo_facultad = ?,estatus_carrera=? where codigo_carrera = "+ Codigo);
 
            pst.setString(1, txtcodigo.getText().trim());//Codigo
             pst.setString(2, txtcarrera.getText().trim());//Nombre

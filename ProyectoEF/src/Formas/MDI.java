@@ -15,12 +15,15 @@ import Mantenimientos.Facultades;
 import Mantenimientos.Cursos;
 import P.TRANSACCIONALES.AsignacionEstudiante;
 import P.transacional.AsignacionMaestros;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 import modelo.Usuarios;
 /**
  *
  * @author Carlos Castillo
  */
+
 public class MDI extends javax.swing.JFrame {
  Usuarios mod;
     /**
@@ -30,6 +33,11 @@ public class MDI extends javax.swing.JFrame {
         initComponents();
         jDesktopPane1.setBorder(new imagenfondo());
         this.setExtendedState(MDI.MAXIMIZED_BOTH);
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        Dimension d = tk.getScreenSize();
+        int ancho = (int)d.getWidth() / 2;
+        int alto = (int)d.getHeight() / 2;
+        jDesktopPane1.setSize(ancho, alto);
     }
         MDI(Usuarios mod) {
         initComponents();
@@ -236,6 +244,7 @@ public class MDI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+        
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         Cursos cu = new Cursos();
@@ -292,13 +301,6 @@ public class MDI extends javax.swing.JFrame {
         p.setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
-        jornadas p = new jornadas();
-        jDesktopPane1.add(p);
-        p.setVisible(true);
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
         sedes p = new sedes();
@@ -312,6 +314,13 @@ public class MDI extends javax.swing.JFrame {
         jDesktopPane1.add(p);
         p.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        jornadas p = new jornadas();
+        jDesktopPane1.add(p);
+        p.setVisible(true);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -347,6 +356,7 @@ public class MDI extends javax.swing.JFrame {
                 new MDI().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
