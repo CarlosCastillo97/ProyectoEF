@@ -53,26 +53,26 @@ public class MDI extends javax.swing.JFrame {
             jMenu6.setVisible(true);
         } else if (mod.getId_Tipo() == 2) {
                 jMenu1.setVisible(true);
-                jMenu2.setVisible(true);
-                jMenu3.setVisible(true);
-                jMenu4.setVisible(true);
-                jMenu5.setVisible(true);
+                jMenu2.setVisible(false);
+                jMenu3.setVisible(false);
+                jMenu4.setVisible(false);
+                jMenu5.setVisible(false);
                 jMenu6.setVisible(true);
         }
                 else if (mod.getId_Tipo() == 3){
-                    jMenu1.setVisible(true);
-                    jMenu2.setVisible(true);
+                    jMenu1.setVisible(false);
+                    jMenu2.setVisible(false);
                     jMenu3.setVisible(true);
                     jMenu4.setVisible(true);
                     jMenu5.setVisible(true);
                     jMenu6.setVisible(true);
         }
                      else{
-                        jMenu1.setVisible(true);
-                        jMenu2.setVisible(true);
-                        jMenu3.setVisible(true);
-                        jMenu4.setVisible(true);
-                        jMenu5.setVisible(true);
+                        jMenu1.setVisible(false);
+                        jMenu2.setVisible(false);
+                        jMenu3.setVisible(false);
+                        jMenu4.setVisible(false);
+                        jMenu5.setVisible(false);
                         jMenu6.setVisible(true);
                   
               }
