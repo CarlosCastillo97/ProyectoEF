@@ -15,10 +15,11 @@ import Mantenimientos.Facultades;
 import Mantenimientos.Cursos;
 import P.TRANSACCIONALES.AsignacionEstudiante;
 import P.transacional.AsignacionMaestros;
+import javax.swing.JOptionPane;
 import modelo.Usuarios;
 /**
  *
- * @author Jacky
+ * @author Carlos Castillo
  */
 public class MDI extends javax.swing.JFrame {
  Usuarios mod;
@@ -342,6 +343,7 @@ public class MDI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new MDI().setVisible(true);
             }
         });
